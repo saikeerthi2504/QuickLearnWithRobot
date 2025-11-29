@@ -1,0 +1,82 @@
+.body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(14, 13, 13);
+  border-radius: 5px;
+  padding: 10px 20px;
+  z-index: 1000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* First row flex layout */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left side: logo + Home */
+.left h6 {
+  display: inline-block;
+  margin-right: 20px;
+}
+.left a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: rgb(239, 244, 239);
+}
+
+/* Right side: search + AboutUs + ContactUs + toggle */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.right input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.right a {
+  text-decoration: none;
+  color: rgb(241, 239, 236);
+}
+
+/* Toggle button */
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  position: absolute;
+  background-color: #eee;
+  min-width: 120px;
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(125, 120, 105, 0.858);
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: rgb(33, 115, 215);
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(234, 177, 8);
+  color: white;
+}
+
+/* Push content below menu */
+.content {
+  padding-top: 60px;
+}
