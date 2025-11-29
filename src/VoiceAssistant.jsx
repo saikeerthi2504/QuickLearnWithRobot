@@ -146,7 +146,7 @@ function VoiceAssistant() {
 
       <div className="robot-jump">
         <img
-          src="Robot.png"
+          src="/Robot.png"
           alt="Robot"
           style={{ width: "150px", cursor: "pointer", borderRadius: "20px" }}
           onClick={handleRobotClick}
