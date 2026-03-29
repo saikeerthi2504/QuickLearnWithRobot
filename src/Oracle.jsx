@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./oracle.css";
+import "./Oracle.css";
 
 const resources = [
   {
