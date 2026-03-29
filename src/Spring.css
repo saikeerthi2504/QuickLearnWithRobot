@@ -1,0 +1,464 @@
+/* ============================================================
+   QuickLearn — spring.css
+   Page: Spring Framework Learning Hub
+   Theme: Deep dark with fresh leaf-green & moss Spring accents
+   Font: Plus Jakarta Sans (display) + Source Code Pro (mono)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Source+Code+Pro:wght@300;400;600&display=swap');
+
+/* ── VARIABLES ── */
+:root {
+  --bg:           #080e0b;
+  --surface:      #0d1510;
+  --surface-2:    #121d15;
+  --border:       rgba(255,255,255,0.07);
+  --border-hover: rgba(74,222,128,0.38);
+
+  --green:        #4ade80;
+  --green-dark:   #22c55e;
+  --green-glow:   rgba(74,222,128,0.13);
+  --green-dim:    rgba(74,222,128,0.06);
+
+  --teal:         #2dd4bf;
+  --sky:          #60a5fa;
+  --amber:        #fbbf24;
+  --red:          #f87171;
+
+  --text-1:       #e6f2eb;
+  --text-2:       #7a9484;
+  --text-3:       #3a4e40;
+
+  --radius-sm:    10px;
+  --radius-md:    16px;
+  --radius-lg:    24px;
+
+  --shadow-card:  0 4px 24px rgba(0,0,0,0.45);
+  --shadow-glow:  0 0 32px rgba(74,222,128,0.12);
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-mono:    'Source Code Pro', monospace;
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PAGE WRAPPER ── */
+.spring-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px 100px;
+  background-image:
+    radial-gradient(ellipse 60% 35% at 50% -5%, rgba(74,222,128,0.07), transparent 55%),
+    radial-gradient(circle at 90% 90%, rgba(45,212,191,0.04), transparent 40%);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.spring-hero {
+  padding: 88px 0 72px;
+  text-align: center;
+  animation: sFadeUp 0.75s var(--ease) both;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.spring-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-dim);
+  border: 1px solid rgba(74,222,128,0.22);
+  padding: 6px 18px;
+  border-radius: 99px;
+  margin-bottom: 28px;
+}
+
+.spring-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--text-1);
+  margin-bottom: 22px;
+}
+
+.spring-accent {
+  color: var(--green);
+  position: relative;
+  text-shadow: 0 0 40px rgba(74,222,128,0.45);
+}
+
+.spring-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), transparent);
+  border-radius: 99px;
+}
+
+.spring-hero-sub {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-2);
+  max-width: 600px;
+  margin: 0 auto 36px;
+}
+
+.spring-hero-stats {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 16px 8px;
+}
+
+.sp-stat { text-align: center; padding: 0 28px; }
+
+.sp-stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.sp-stat-label {
+  font-size: 0.68rem;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sp-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+.spring-section {
+  margin-bottom: 76px;
+  animation: sFadeUp 0.7s var(--ease) both;
+  padding-top: 64px;
+}
+
+.spring-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 32px;
+}
+
+.spring-section-num {
+  display: inline-block;
+  background: var(--green-dim);
+  border: 1px solid rgba(74,222,128,0.18);
+  padding: 4px 14px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+}
+
+.spring-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── TAGS ── */
+.spring-pdf-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  white-space: nowrap;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.tag-green { background: rgba(74,222,128,0.1);  color: var(--green); border: 1px solid rgba(74,222,128,0.22); }
+.tag-teal  { background: rgba(45,212,191,0.1);  color: var(--teal);  border: 1px solid rgba(45,212,191,0.22); }
+.tag-red   { background: rgba(248,113,113,0.1); color: var(--red);   border: 1px solid rgba(248,113,113,0.22);}
+
+/* ============================================================
+   TOPICS
+   ============================================================ */
+.spring-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.spring-topic-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  cursor: default;
+  transition: all 0.22s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.spring-topic-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), transparent);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.spring-topic-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+.spring-topic-card:hover::before { opacity: 1; }
+
+.spring-topic-icon { font-size: 1.6rem; display: block; margin-bottom: 14px; line-height: 1; }
+.spring-topic-name { font-family: var(--font-display); font-size: 0.97rem; font-weight: 700; color: var(--text-1); margin-bottom: 8px; line-height: 1.35; }
+.spring-topic-desc { font-size: 0.82rem; color: var(--text-2); line-height: 1.7; font-family: var(--font-mono); }
+
+/* ============================================================
+   SNIPPET
+   ============================================================ */
+.spring-snippet-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.spring-snippet-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  flex-wrap: wrap;
+}
+
+.spring-snippet-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-3);
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s var(--ease);
+}
+.spring-snippet-tab:hover { color: var(--text-1); border-color: var(--border); }
+.spring-snippet-tab.active { background: var(--green-dim); color: var(--green); border-color: rgba(74,222,128,0.3); }
+
+.spring-copy-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.15s var(--ease);
+}
+.spring-copy-btn:hover { border-color: rgba(74,222,128,0.35); color: var(--green); }
+
+.spring-snippet-code {
+  padding: 28px;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--text-1);
+  white-space: pre;
+  overflow-x: auto;
+}
+.spring-snippet-code code { color: inherit; }
+
+/* ============================================================
+   RESOURCE CARDS
+   ============================================================ */
+.spring-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.spring-pdf-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.spring-pdf-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), transparent);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.spring-pdf-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+.spring-pdf-card:hover::before { opacity: 1; }
+
+.spring-pdf-icon   { font-size: 1.6rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.spring-pdf-body   { flex: 1; min-width: 0; }
+.spring-pdf-title  { font-family: var(--font-display); font-size: 0.97rem; font-weight: 700; color: var(--text-1); margin-bottom: 6px; line-height: 1.4; }
+.spring-pdf-pages  { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-3); }
+.spring-pdf-arrow  { font-size: 1.1rem; color: var(--text-3); flex-shrink: 0; transition: color 0.2s, transform 0.2s var(--ease); margin-top: 2px; }
+.spring-pdf-card:hover .spring-pdf-arrow { color: var(--green); transform: translate(2px, -2px); }
+
+/* ============================================================
+   VIDEOS
+   ============================================================ */
+.spring-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.spring-video-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.25s var(--ease);
+}
+.spring-video-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.spring-video-frame-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+.spring-video-frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.spring-video-meta   { padding: 18px 20px 22px; }
+.spring-video-badges { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+
+.sp-badge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--green-dim);
+  color: var(--green);
+  border: 1px solid rgba(74,222,128,0.22);
+}
+.sp-badge-time { background: rgba(255,255,255,0.04); color: var(--text-3); border-color: var(--border); }
+
+.spring-video-title { font-family: var(--font-display); font-size: 0.97rem; font-weight: 700; color: var(--text-1); margin-bottom: 8px; line-height: 1.35; }
+.spring-video-desc  { font-size: 0.855rem; color: var(--text-2); line-height: 1.7; font-family: var(--font-mono); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.spring-footer {
+  text-align: center;
+  padding: 48px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 72px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes sFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .spring-page        { padding: 0 20px 72px; }
+  .spring-card-grid,
+  .spring-video-grid  { grid-template-columns: 1fr; }
+  .spring-topics-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .spring-hero         { padding: 56px 0 48px; }
+  .spring-hero-title   { font-size: 2rem; }
+  .spring-hero-stats   { flex-direction: column; border-radius: var(--radius-md); padding: 20px 28px; gap: 12px; }
+  .sp-stat-divider     { width: 48px; height: 1px; }
+  .spring-topics-grid  { grid-template-columns: 1fr; }
+}

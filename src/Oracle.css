@@ -1,0 +1,500 @@
+/* ============================================================
+   QuickLearn — oracle.css
+   Page: Oracle Learning Hub
+   Theme: Deep dark with crimson-red & ember Oracle accents
+   Font: Playfair Display (display) + IBM Plex Mono (mono)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+/* ── VARIABLES ── */
+:root {
+  --bg:           #0f0d0d;
+  --surface:      #181414;
+  --surface-2:    #201818;
+  --border:       rgba(255,255,255,0.07);
+  --border-hover: rgba(220,50,50,0.38);
+
+  --red:          #e03c3c;
+  --red-dark:     #a82a2a;
+  --red-glow:     rgba(220,60,60,0.13);
+  --red-dim:      rgba(220,60,60,0.06);
+
+  --amber:        #f5a623;
+  --green:        #3ecf8e;
+  --blue:         #6eb3f7;
+
+  --text-1:       #f0ebe8;
+  --text-2:       #8e8480;
+  --text-3:       #4d4340;
+
+  --radius-sm:    10px;
+  --radius-md:    16px;
+
+  --shadow-card:  0 4px 24px rgba(0,0,0,0.45);
+  --shadow-glow:  0 0 32px rgba(220,60,60,0.13);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PAGE WRAPPER ── */
+.oracle-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px 100px;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(220,60,60,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(220,60,60,0.04) 0%, transparent 50%);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.oracle-hero {
+  padding: 88px 0 72px;
+  text-align: center;
+  animation: oFadeUp 0.75s var(--ease) both;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.oracle-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  background: var(--red-dim);
+  border: 1px solid rgba(220,60,60,0.22);
+  padding: 6px 18px;
+  border-radius: 99px;
+  margin-bottom: 28px;
+}
+
+.oracle-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  color: var(--text-1);
+  margin-bottom: 22px;
+}
+
+.oracle-accent {
+  color: var(--red);
+  position: relative;
+  text-shadow: 0 0 40px rgba(220,60,60,0.45);
+}
+
+.oracle-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), transparent);
+  border-radius: 99px;
+}
+
+.oracle-hero-sub {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-2);
+  max-width: 600px;
+  margin: 0 auto 36px;
+}
+
+.oracle-hero-stats {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 16px 8px;
+}
+
+.o-stat { text-align: center; padding: 0 28px; }
+
+.o-stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.o-stat-label {
+  font-size: 0.68rem;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.o-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+.oracle-section {
+  margin-bottom: 76px;
+  animation: oFadeUp 0.7s var(--ease) both;
+  padding-top: 64px;
+}
+
+.oracle-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 32px;
+}
+
+.oracle-section-num {
+  display: inline-block;
+  background: var(--red-dim);
+  border: 1px solid rgba(220,60,60,0.18);
+  padding: 4px 14px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+}
+
+.oracle-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── TAGS ── */
+.oracle-pdf-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  white-space: nowrap;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.tag-green  { background: rgba(62,207,142,0.1);  color: var(--green); border: 1px solid rgba(62,207,142,0.22); }
+.tag-yellow { background: rgba(245,166,35,0.1);  color: var(--amber); border: 1px solid rgba(245,166,35,0.22); }
+.tag-red    { background: rgba(220,60,60,0.1);   color: var(--red);   border: 1px solid rgba(220,60,60,0.22);  }
+
+/* ============================================================
+   TOPICS
+   ============================================================ */
+.oracle-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.oracle-topic-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  cursor: default;
+  transition: all 0.22s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.oracle-topic-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red), transparent);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.oracle-topic-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.oracle-topic-card:hover::before { opacity: 1; }
+
+.oracle-topic-icon { font-size: 1.6rem; display: block; margin-bottom: 14px; line-height: 1; }
+.oracle-topic-name {
+  font-family: var(--font-display);
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.oracle-topic-desc { font-size: 0.82rem; color: var(--text-2); line-height: 1.7; font-family: var(--font-mono); }
+
+/* ============================================================
+   SNIPPET
+   ============================================================ */
+.oracle-snippet-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.oracle-snippet-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  flex-wrap: wrap;
+}
+
+.oracle-snippet-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-3);
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s var(--ease);
+}
+
+.oracle-snippet-tab:hover { color: var(--text-1); border-color: var(--border); }
+.oracle-snippet-tab.active {
+  background: var(--red-dim);
+  color: var(--red);
+  border-color: rgba(220,60,60,0.3);
+}
+
+.oracle-copy-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.15s var(--ease);
+}
+.oracle-copy-btn:hover { border-color: rgba(220,60,60,0.35); color: var(--red); }
+
+.oracle-snippet-code {
+  padding: 28px;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--text-1);
+  white-space: pre;
+  overflow-x: auto;
+}
+.oracle-snippet-code code { color: inherit; }
+
+/* ============================================================
+   PDF CARDS
+   ============================================================ */
+.oracle-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.oracle-pdf-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.oracle-pdf-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red), transparent);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.oracle-pdf-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.oracle-pdf-card:hover::before { opacity: 1; }
+
+.oracle-pdf-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.oracle-pdf-body { flex: 1; min-width: 0; }
+.oracle-pdf-title {
+  font-family: var(--font-display);
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.oracle-pdf-pages { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-3); }
+.oracle-pdf-arrow {
+  font-size: 1.1rem;
+  color: var(--text-3);
+  flex-shrink: 0;
+  transition: color 0.2s, transform 0.2s var(--ease);
+  margin-top: 2px;
+}
+.oracle-pdf-card:hover .oracle-pdf-arrow { color: var(--red); transform: translate(2px, -2px); }
+
+/* ============================================================
+   VIDEOS
+   ============================================================ */
+.oracle-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.oracle-video-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.25s var(--ease);
+}
+
+.oracle-video-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.oracle-video-frame-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+
+.oracle-video-frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.oracle-video-meta { padding: 18px 20px 22px; }
+
+.oracle-video-badges { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+
+.o-badge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--red-dim);
+  color: var(--red);
+  border: 1px solid rgba(220,60,60,0.22);
+}
+.o-badge-time { background: rgba(255,255,255,0.04); color: var(--text-3); border-color: var(--border); }
+
+.oracle-video-title {
+  font-family: var(--font-display);
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.oracle-video-desc { font-size: 0.855rem; color: var(--text-2); line-height: 1.7; font-family: var(--font-mono); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.oracle-footer {
+  text-align: center;
+  padding: 48px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 72px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes oFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .oracle-page       { padding: 0 20px 72px; }
+  .oracle-card-grid,
+  .oracle-video-grid { grid-template-columns: 1fr; }
+  .oracle-topics-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .oracle-hero         { padding: 56px 0 48px; }
+  .oracle-hero-title   { font-size: 2rem; }
+  .oracle-hero-stats   { flex-direction: column; border-radius: var(--radius-md); padding: 20px 28px; gap: 12px; }
+  .o-stat-divider      { width: 48px; height: 1px; }
+  .oracle-topics-grid  { grid-template-columns: 1fr; }
+}

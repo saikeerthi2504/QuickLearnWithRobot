@@ -1,43 +1,47 @@
 /* ============================================================
-   QuickLearn — java.css
-   Page: Java Learning Hub
-   Theme: Deep dark with warm Java-orange & coffee accents
-   Font: Outfit (display) + Literata (body)
+   QuickLearn — python.css
+   Page: Python Learning Hub
+   Theme: Light with Python-blue & yellow-gold accents
+   Fonts: Fraunces (display) + DM Sans (body)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Literata:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 /* ── VARIABLES ── */
 :root {
-  --bg:           #0e0f13;
-  --surface:      #15171e;
-  --surface-2:    #1c1f29;
-  --border:       rgba(255,255,255,0.07);
-  --border-hover: rgba(255,165,50,0.35);
+  --bg:           #f7f9fc;
+  --surface:      #ffffff;
+  --surface-2:    #eef3fa;
+  --border:       #dde4ef;
+  --border-hover: #3776ab;
 
-  --java:         #f89820;
-  --java-dark:    #c47310;
-  --java-glow:    rgba(248,152,32,0.12);
-  --java-dim:     rgba(248,152,32,0.06);
+  --py-blue:      #3776ab;
+  --py-blue-lt:   #5a9fd4;
+  --py-yellow:    #ffd43b;
+  --py-yellow-dk: #c9a800;
+  --py-glow:      rgba(55,118,171,0.12);
+  --py-dim:       rgba(55,118,171,0.07);
 
-  --blue:         #60a5fa;
-  --green:        #34d399;
-  --red:          #f87171;
-  --purple:       #a78bfa;
+  --green:        #16a34a;
+  --orange:       #ea580c;
+  --red:          #dc2626;
+  --purple:       #7c3aed;
+  --yellow-tag:   #b45309;
 
-  --text-1:       #f0f2f8;
-  --text-2:       #8b95a8;
-  --text-3:       #4b5567;
+  --text-1:       #0f1f33;
+  --text-2:       #4b6180;
+  --text-3:       #9bafc8;
 
   --radius-sm:    10px;
   --radius-md:    16px;
-  --radius-lg:    24px;
+  --radius-lg:    26px;
 
-  --shadow-card:  0 4px 24px rgba(0,0,0,0.35);
-  --shadow-glow:  0 0 32px rgba(248,152,32,0.18);
+  --shadow-sm:    0 2px 8px rgba(15,31,51,0.06);
+  --shadow-md:    0 8px 28px rgba(15,31,51,0.10);
+  --shadow-lg:    0 20px 56px rgba(15,31,51,0.13);
 
-  --font-display: 'Outfit', sans-serif;
-  --font-body:    'Literata', Georgia, serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
   --ease:         cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -52,7 +56,7 @@ body {
 }
 
 /* ── PAGE WRAPPER ── */
-.java-page {
+.py-page {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 32px 100px;
@@ -61,70 +65,73 @@ body {
 /* ============================================================
    HERO
    ============================================================ */
-.java-hero {
-  padding: 88px 0 72px;
+.py-hero {
+  padding: 90px 0 72px;
   text-align: center;
-  animation: jFadeUp 0.75s var(--ease) both;
+  animation: pyFadeUp 0.75s var(--ease) both;
 }
 
-.java-hero-badge {
+.py-hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--java);
-  background: var(--java-dim);
-  border: 1px solid rgba(248,152,32,0.2);
+  color: var(--py-blue);
+  background: var(--py-dim);
+  border: 1px solid rgba(55,118,171,0.22);
   padding: 6px 18px;
   border-radius: 99px;
   margin-bottom: 28px;
 }
 
-.java-hero-title {
+.py-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 6.5vw, 4.4rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.08;
+  font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
   color: var(--text-1);
   margin-bottom: 22px;
 }
 
-.java-accent {
-  color: var(--java);
+.py-accent {
+  color: var(--py-blue);
   position: relative;
+  display: inline-block;
 }
 
-.java-accent::after {
+.py-accent::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
   left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--java), transparent);
+  height: 5px;
+  background: var(--py-yellow);
   border-radius: 99px;
+  opacity: 0.7;
+  z-index: -1;
 }
 
-.java-hero-sub {
+.py-hero-sub {
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.85;
   color: var(--text-2);
-  max-width: 640px;
+  max-width: 620px;
   margin: 0 auto 36px;
+  font-weight: 300;
 }
 
-.java-hero-stats {
+.py-hero-stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px 24px;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
+  gap: 8px 22px;
+  font-size: 0.84rem;
   font-weight: 500;
   color: var(--text-3);
 }
@@ -132,29 +139,29 @@ body {
 /* ============================================================
    SECTION SHARED
    ============================================================ */
-.java-section {
+.py-section {
   margin-bottom: 76px;
-  animation: jFadeUp 0.7s var(--ease) both;
+  animation: pyFadeUp 0.7s var(--ease) both;
 }
 
-.java-section-label {
+.py-section-label {
   display: inline-block;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--java);
-  background: var(--java-dim);
-  border: 1px solid rgba(248,152,32,0.18);
+  color: var(--py-blue);
+  background: var(--py-dim);
+  border: 1px solid rgba(55,118,171,0.18);
   padding: 4px 14px;
   border-radius: 99px;
   margin-bottom: 14px;
 }
 
-.java-section-title {
+.py-section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--text-1);
@@ -165,69 +172,73 @@ body {
 /* ============================================================
    TAGS
    ============================================================ */
-.java-tag {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 700;
+.py-tag {
+  font-family: var(--font-body);
+  font-size: 0.67rem;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 99px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.tag-green  { background: rgba(52,211,153,0.12);  color: var(--green);  border: 1px solid rgba(52,211,153,0.2);  }
-.tag-blue   { background: rgba(96,165,250,0.12);  color: var(--blue);   border: 1px solid rgba(96,165,250,0.2);  }
-.tag-orange { background: rgba(248,152,32,0.12);  color: var(--java);   border: 1px solid rgba(248,152,32,0.2);  }
-.tag-purple { background: rgba(167,139,250,0.12); color: var(--purple); border: 1px solid rgba(167,139,250,0.2); }
-.tag-red    { background: rgba(248,113,113,0.12); color: var(--red);    border: 1px solid rgba(248,113,113,0.2); }
+.tag-green  { background: #dcfce7; color: var(--green);     border: 1px solid #bbf7d0; }
+.tag-blue   { background: #dbeafe; color: #1d4ed8;          border: 1px solid #bfdbfe; }
+.tag-orange { background: #ffedd5; color: var(--orange);    border: 1px solid #fed7aa; }
+.tag-purple { background: #ede9fe; color: var(--purple);    border: 1px solid #ddd6fe; }
+.tag-yellow { background: #fef9c3; color: var(--yellow-tag);border: 1px solid #fef08a; }
+.tag-red    { background: #fee2e2; color: var(--red);       border: 1px solid #fecaca; }
 
 /* ============================================================
    TOPICS PILLS
    ============================================================ */
-.java-topics-grid {
+.py-topics-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.java-topic-pill {
+.py-topic-pill {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-2);
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   padding: 10px 18px;
   border-radius: var(--radius-sm);
   cursor: default;
   transition: all 0.22s var(--ease);
+  box-shadow: var(--shadow-sm);
 }
 
-.java-topic-pill:hover {
-  border-color: var(--border-hover);
-  color: var(--java);
-  background: var(--java-dim);
+.py-topic-pill:hover {
+  border-color: var(--py-blue);
+  color: var(--py-blue);
+  background: var(--py-dim);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* ============================================================
    PDF CARDS
    ============================================================ */
-.java-card-container {
+.py-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 18px;
 }
 
-.java-card {
+.py-card {
   display: flex;
   flex-direction: column;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
   padding: 24px 22px;
   text-decoration: none;
@@ -235,37 +246,37 @@ body {
   transition: all 0.25s var(--ease);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
-.java-card::before {
+.py-card::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--java), transparent);
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--py-blue), var(--py-yellow));
   opacity: 0;
   transition: opacity 0.25s var(--ease);
 }
 
-.java-card:hover {
-  border-color: var(--border-hover);
-  background: var(--surface-2);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card), var(--shadow-glow);
+.py-card:hover {
+  border-color: var(--py-blue);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
-.java-card:hover::before { opacity: 1; }
+.py-card:hover::after { opacity: 1; }
 
-.java-card-top {
+.py-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
 }
 
-.java-card-icon { font-size: 1.6rem; line-height: 1; }
+.py-card-icon { font-size: 1.7rem; line-height: 1; }
 
-.java-card-title {
+.py-card-title {
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
@@ -274,58 +285,59 @@ body {
   line-height: 1.35;
 }
 
-.java-card-desc {
+.py-card-desc {
   font-size: 0.875rem;
   color: var(--text-2);
-  line-height: 1.7;
+  line-height: 1.75;
   flex: 1;
   margin-bottom: 18px;
+  font-weight: 300;
 }
 
-.java-card-link {
-  font-family: var(--font-display);
+.py-card-link {
+  font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--java);
+  color: var(--py-blue);
   letter-spacing: 0.02em;
-  margin-top: auto;
 }
 
 /* ============================================================
    VIDEO CARDS
    ============================================================ */
-.java-video-grid {
+.py-video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 20px;
 }
 
-.java-video-card {
+.py-video-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
   overflow: hidden;
   transition: all 0.25s var(--ease);
+  box-shadow: var(--shadow-sm);
 }
 
-.java-video-card:hover {
-  border-color: var(--border-hover);
+.py-video-card:hover {
+  border-color: var(--py-blue);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-md);
 }
 
-.java-video-wrap iframe {
+.py-video-wrap iframe {
   display: block;
   width: 100%;
   height: 210px;
   background: #000;
 }
 
-.java-video-body {
+.py-video-body {
   padding: 18px 20px 22px;
 }
 
-.java-video-header {
+.py-video-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -333,7 +345,7 @@ body {
   margin-bottom: 10px;
 }
 
-.java-video-title {
+.py-video-title {
   font-family: var(--font-display);
   font-size: 0.97rem;
   font-weight: 700;
@@ -341,142 +353,172 @@ body {
   line-height: 1.35;
 }
 
-.java-video-desc {
+.py-video-desc {
   font-size: 0.855rem;
   color: var(--text-2);
-  line-height: 1.7;
+  line-height: 1.75;
+  font-weight: 300;
 }
 
 /* ============================================================
    TIPS CARDS
    ============================================================ */
-.java-tips-grid {
+.py-tips-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
 
-.java-tip-card {
+.py-tip-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 28px 26px;
+  padding: 30px 26px;
   transition: all 0.25s var(--ease);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
 }
 
-.java-tip-card:hover {
-  border-color: var(--border-hover);
-  background: var(--surface-2);
+.py-tip-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(180deg, var(--py-blue), var(--py-yellow));
+  border-radius: 4px 0 0 4px;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.py-tip-card:hover {
+  border-color: var(--py-blue);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-md);
 }
 
-.java-tip-num {
+.py-tip-card:hover::before { opacity: 1; }
+
+.py-tip-num {
   font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: var(--java);
-  opacity: 0.18;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--py-blue);
+  opacity: 0.12;
   line-height: 1;
   margin-bottom: 14px;
   letter-spacing: -0.04em;
 }
 
-.java-tip-title {
+.py-tip-title {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--text-1);
   margin-bottom: 10px;
 }
 
-.java-tip-detail {
+.py-tip-detail {
   font-size: 0.875rem;
   color: var(--text-2);
-  line-height: 1.75;
+  line-height: 1.78;
+  font-weight: 300;
 }
 
 /* ============================================================
    CTA BANNER
    ============================================================ */
-.java-cta {
-  background: linear-gradient(135deg, #1e1508 0%, #251a09 60%, #1a1208 100%);
-  border: 1px solid rgba(248,152,32,0.2);
+.py-cta {
+  background: linear-gradient(135deg, var(--py-blue) 0%, #1a4f7a 100%);
   border-radius: var(--radius-lg);
-  padding: 64px 48px;
+  padding: 68px 52px;
   text-align: center;
-  box-shadow: 0 0 60px rgba(248,152,32,0.07);
-  animation: jFadeUp 0.7s 0.3s var(--ease) both;
+  box-shadow: 0 20px 60px rgba(55,118,171,0.28);
+  animation: pyFadeUp 0.7s 0.3s var(--ease) both;
+  position: relative;
+  overflow: hidden;
 }
 
-.java-cta-icon {
-  font-size: 3rem;
+/* Python yellow snake stripe */
+.py-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: var(--py-yellow);
+}
+
+.py-cta-icon {
+  font-size: 3.2rem;
   margin-bottom: 20px;
   display: block;
   animation: float 3s ease-in-out infinite;
 }
 
-.java-cta h2 {
+.py-cta h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
   font-weight: 700;
-  color: var(--text-1);
+  color: #fff;
   margin-bottom: 14px;
   letter-spacing: -0.025em;
 }
 
-.java-cta p {
+.py-cta p {
   font-size: 0.97rem;
-  color: var(--text-2);
-  max-width: 540px;
+  color: rgba(255,255,255,0.80);
+  max-width: 520px;
   margin: 0 auto 32px;
-  line-height: 1.8;
+  line-height: 1.85;
+  font-weight: 300;
 }
 
-.java-cta-btn {
+.py-cta-btn {
   display: inline-block;
-  background: linear-gradient(135deg, var(--java), var(--java-dark));
-  color: #fff;
+  background: var(--py-yellow);
+  color: #0f1f33;
   text-decoration: none;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 700;
   padding: 14px 32px;
   border-radius: var(--radius-sm);
-  box-shadow: 0 4px 20px rgba(248,152,32,0.35);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   transition: all 0.22s var(--ease);
+  letter-spacing: 0.01em;
 }
 
-.java-cta-btn:hover {
+.py-cta-btn:hover {
+  background: #ffe566;
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(248,152,32,0.5);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
 /* ============================================================
    ANIMATIONS
    ============================================================ */
-@keyframes jFadeUp {
-  from { opacity: 0; transform: translateY(28px); }
+@keyframes pyFadeUp {
+  from { opacity: 0; transform: translateY(26px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
+  50%       { transform: translateY(-9px); }
 }
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
-  .java-page            { padding: 0 20px 72px; }
-  .java-card-container,
-  .java-video-grid      { grid-template-columns: 1fr; }
-  .java-tips-grid       { grid-template-columns: 1fr; }
-  .java-cta             { padding: 40px 24px; }
+  .py-page             { padding: 0 20px 72px; }
+  .py-card-container,
+  .py-video-grid       { grid-template-columns: 1fr; }
+  .py-tips-grid        { grid-template-columns: 1fr; }
+  .py-cta              { padding: 42px 26px; }
 }
 
 @media (max-width: 480px) {
-  .java-hero       { padding: 56px 0 48px; }
-  .java-hero-title { font-size: 2rem; }
+  .py-hero       { padding: 56px 0 44px; }
+  .py-hero-title { font-size: 2.1rem; }
 }

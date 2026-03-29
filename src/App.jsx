@@ -32,68 +32,72 @@ function App() {
 
   return (
     <BrowserRouter>
+  <div className="navbar">
+
+    {/* LEFT */}
+    <div className="nav-left">
+      <h3 className="logo">💻 QuickLearn</h3>
+      <Link to="/Home">Home</Link>
+    </div>
+
+    {/* CENTER */}
+    <div className="nav-center">
       <SearchBar />
-      <div className="body">
-        {/* First row: logo + Home + search + AboutUs + ContactUs + toggle */}
-        <div className="top-row">
-          <div className="left">
-            <h6 style={{ color: "white" }}>💻📔QUICK LEARN</h6>
-            <Link to="/Home">Home</Link>
-          </div>
+    </div>
 
-          {/* Toggle Button */}
-          <div className="dropdown">
-            <button
-              style={{ color: "white" }}
-              className="toggle-btn"
-              onClick={() => setShowDropdown(!showDropdown)}
-            >
-              ☰GetQuick
-            </button>
+    {/* RIGHT */}
+    <div className="nav-right">
 
-            {/* Dropdown items */}
-            {showDropdown && (
-              <div className="dropdown-content">
-                <Link to="/Python" onClick={() => setShowDropdown(false)}>Python</Link>
-                <Link to="/Java" onClick={() => setShowDropdown(false)}>Java</Link>
-                <Link to="/DotNet" onClick={() => setShowDropdown(false)}>DotNet</Link>
-                <Link to="/C" onClick={() => setShowDropdown(false)}>C lang</Link>
-                <Link to="/Oracle" onClick={() => setShowDropdown(false)}>Oracle</Link>
-                <Link to="/ReactResource" onClick={() => setShowDropdown(false)}>React</Link>
-                <Link to="/SpringResources" onClick={() => setShowDropdown(false)}>Spring</Link>
-              </div>
-            )}
-          </div>
+      <Link to="/aboutus">About</Link>
+      <Link to="/contactus">Contact</Link>
 
-          <div className="right">
-            <SearchBar /> {/* use the search component */}
-            <Link to="/aboutus">AboutUs</Link>
-            <Link to="/contactus">ContactUs</Link>
-            <Link to="/">Login</Link>
-            <Link to="/signup">SignUp</Link>
+      {/* Dropdown */}
+      <div className="dropdown">
+        <button
+          className="toggle-btn"
+          onClick={() => setShowDropdown(!showDropdown)}
+        >
+          ☰ Explore
+        </button>
+
+        {showDropdown && (
+          <div className="dropdown-content">
+            <Link to="/Python" onClick={() => setShowDropdown(false)}>Python</Link>
+            <Link to="/Java" onClick={() => setShowDropdown(false)}>Java</Link>
+            <Link to="/DotNet" onClick={() => setShowDropdown(false)}>DotNet</Link>
+            <Link to="/C" onClick={() => setShowDropdown(false)}>C</Link>
+            <Link to="/Oracle" onClick={() => setShowDropdown(false)}>Oracle</Link>
+            <Link to="/ReactResource" onClick={() => setShowDropdown(false)}>React</Link>
+            <Link to="/SpringResources" onClick={() => setShowDropdown(false)}>Spring</Link>
           </div>
-        </div>
+        )}
       </div>
 
-      {/* Page content */}
-      <div className="content" style={{backgroundColor:'lightyellow'}}>
-        <VoiceAssistant />
-        <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/Python" element={<Python />} />
-          <Route path="/Java" element={<Java />} />
-          <Route path="/DotNet" element={<DotNet />} />
-          <Route path="/C" element={<C />} />
-          <Route path="/Oracle" element={<Oracle />} />
-          <Route path="/ReactResource" element={<ReactResource />} />
-          <Route path="/SpringResources" element={<SpringResources />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+      <Link to="/">Login</Link>
+      <Link to="/signup" className="signup-btn">Sign Up</Link>
+    </div>
+
+  </div>
+
+  {/* CONTENT */}
+  <div className="content">
+    <VoiceAssistant />
+    <Routes>
+      <Route path="/Home" element={<Home />} />
+      <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/contactus" element={<ContactUs />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/Python" element={<Python />} />
+      <Route path="/Java" element={<Java />} />
+      <Route path="/DotNet" element={<DotNet />} />
+      <Route path="/C" element={<C />} />
+      <Route path="/Oracle" element={<Oracle />} />
+      <Route path="/ReactResource" element={<ReactResource />} />
+      <Route path="/SpringResources" element={<SpringResources />} />
+    </Routes>
+  </div>
+</BrowserRouter>
   );
 }
 

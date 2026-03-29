@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "./java.css";
+
 
 function VoiceAssistant() {
   const [message, setMessage] = useState("");
@@ -142,7 +142,7 @@ function VoiceAssistant() {
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>🎙️ Voice Assistant</h2>
+      <h2 style={{color:"white"}}>🎙️ Voice Assistant</h2>
 
       <div className="robot-jump">
         <img
@@ -153,165 +153,12 @@ function VoiceAssistant() {
         />
       </div>
 
-      <p>User said: {message}</p>
-      <p>Robot status: {isListening ? "🟢 Listening" : "🔴 Sleeping"}</p>
+      <p style={{color:"white"}}>User said: {message}</p>
+      <p style={{color:"white"}}>Robot status: {isListening ? "🟢 Listening" : "🔴 Sleeping"}</p>
     </div>
   );
 }
 
 export default VoiceAssistant;
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect, useRef } from "react";
-// import { useNavigate } from "react-router-dom";
-// import "./java.css";
-
-// function VoiceAssistant() {
-//   const [message, setMessage] = useState("");
-//   const [isListening, setIsListening] = useState(false);
-//   const recognitionRef = useRef(null);
-//   const voicesRef = useRef([]);
-//   const navigate = useNavigate();
-
-//   // Wake word
-//   const wakeName = "keerthi";
-
-//   // Load available voices
-//   useEffect(() => {
-//     const loadVoices = () => {
-//       voicesRef.current = window.speechSynthesis.getVoices();
-//     };
-//     loadVoices();
-//     window.speechSynthesis.onvoiceschanged = loadVoices;
-//   }, []);
-
-//   // Speak function (male voice) with pause/resume recognition
-//   const speak = (text, callback) => {
-//     // Stop recognition while speaking
-//     if (recognitionRef.current) recognitionRef.current.stop();
-
-//     const speech = new SpeechSynthesisUtterance(text);
-//     speech.lang = "en-US";
-//     speech.pitch = 1;
-//     speech.rate = 0.95;
-//     speech.volume = 1;
-
-//     const voices = voicesRef.current;
-//     const maleVoice =
-//       voices.find((v) => v.name === "Google US English") ||
-//       voices.find((v) => v.name.includes("Alex")) ||
-//       voices.find((v) => v.name.includes("David")) ||
-//       voices.find((v) => v.name.toLowerCase().includes("male"));
-
-//     if (maleVoice) speech.voice = maleVoice;
-
-//     speech.onend = () => {
-//       // Resume recognition after speaking
-//       if (recognitionRef.current) recognitionRef.current.start();
-//       if (callback) callback();
-//     };
-
-//     window.speechSynthesis.speak(speech);
-//   };
-
-//   // Initialize Speech Recognition
-//   useEffect(() => {
-//     const SpeechRecognition =
-//       window.SpeechRecognition || window.webkitSpeechRecognition;
-
-//     if (!SpeechRecognition) {
-//       alert("Speech Recognition not supported in this browser.");
-//       return;
-//     }
-
-//     const recognition = new SpeechRecognition();
-//     recognition.lang = "en-US";
-//     recognition.continuous = true;
-//     recognition.interimResults = false;
-
-//     recognition.onresult = (event) => {
-//       const transcript = event.results[event.results.length - 1][0].transcript;
-//       const lower = transcript.toLowerCase();
-//       setMessage(lower);
-
-//       // Wake up assistant
-//       if (lower.includes(`hey ${wakeName}`)) {
-//         setIsListening(true);
-//         speak(`Hi! I am your assistant. How can I help you?`);
-//       }
-//       // Sleep
-//       else if (lower.includes("i don't need help")) {
-//         speak(
-//           `Alright, I am going to sleep now. Call me by saying Hey ${wakeName} when you need me.`,
-//           () => setIsListening(false)
-//         );
-//       }
-//       // Help command
-//       else if (lower.includes("i need help")) {
-//         setIsListening(true);
-//         speak(
-//           "Sure, I am listening. You can say commands like Open Java, Open Python, Open React, or any course you want."
-//         );
-//       }
-//       // Handle course commands
-//       else if (isListening) {
-//         handleCommands(lower);
-//       }
-//     };
-
-//     recognitionRef.current = recognition;
-//     recognition.start();
-
-//     return () => recognition.stop();
-//   }, [isListening]);
-
-//   // Handle course commands
-//   const handleCommands = (lower) => {
-//     const openComponent = (path, name) => {
-//       speak(`Yes, opening ${name} component.`, () => {
-//         navigate(path);
-//         speak(`Wow! You selected ${name}. Enjoy your learning and all the best!`);
-//       });
-//     };
-
-//     if (lower.includes("open c")) openComponent("/c", "C");
-//     else if (lower.includes("open python")) openComponent("/python", "Python");
-//     else if (lower.includes("open java")) openComponent("/java", "Java");
-//     else if (lower.includes("open react")) openComponent("/react", "React");
-//     else if (lower.includes("open spring")) openComponent("/spring", "Spring");
-//     else if (lower.includes("open oracle")) openComponent("/oracle", "Oracle");
-//     else if (lower.includes("open dotnet") || lower.includes("open dot net"))
-//       openComponent("/dotnet", "Dotnet");
-//     else speak("Sorry, I didn't understand that.");
-//   };
-
-//   return (
-//     <div style={{ textAlign: "center", marginTop: "50px" }}>
-//       <h2>🎙️ Voice Assistant</h2>
-
-//       {/* Robot Image */}
-//       <div className="robot-jump">
-//         <img
-//           src="public/Robot.png"
-//           alt="Robot"
-//           style={{ width: "150px", borderRadius: "20px" }}
-//         />
-//       </div>
-
-//       <p>User said: {message}</p>
-//       <p>Status: {isListening ? "🟢 Awake & Listening" : "🔴 Sleeping"}</p>
-//     </div>
-//   );
-// }
-
-// export default VoiceAssistant;
 
 

@@ -1,0 +1,472 @@
+/* ============================================================
+   QuickLearn — react.css
+   Page: React Learning Hub
+   Theme: Deep dark with electric sky-blue & teal React accents
+   Font: DM Sans (display) + Fira Code (mono)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Fira+Code:wght@300;400;600&display=swap');
+
+/* ── VARIABLES ── */
+:root {
+  --bg:           #080d14;
+  --surface:      #0e1520;
+  --surface-2:    #131d2c;
+  --border:       rgba(255,255,255,0.07);
+  --border-hover: rgba(97,218,251,0.38);
+
+  --sky:          #61dafb;
+  --sky-dark:     #3baac7;
+  --sky-glow:     rgba(97,218,251,0.13);
+  --sky-dim:      rgba(97,218,251,0.06);
+
+  --teal:         #2dd4bf;
+  --green:        #4ade80;
+  --purple:       #c084fc;
+  --amber:        #fbbf24;
+
+  --text-1:       #e7f0fa;
+  --text-2:       #7d90a8;
+  --text-3:       #3d4f64;
+
+  --radius-sm:    10px;
+  --radius-md:    16px;
+  --radius-lg:    24px;
+
+  --shadow-card:  0 4px 24px rgba(0,0,0,0.45);
+  --shadow-glow:  0 0 32px rgba(97,218,251,0.13);
+
+  --font-display: 'DM Sans', sans-serif;
+  --font-mono:    'Fira Code', monospace;
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PAGE WRAPPER ── */
+.react-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px 100px;
+  background-image:
+    radial-gradient(ellipse 70% 40% at 50% -10%, rgba(97,218,251,0.07), transparent 60%);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.react-hero {
+  padding: 88px 0 72px;
+  text-align: center;
+  animation: rFadeUp 0.75s var(--ease) both;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.react-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sky);
+  background: var(--sky-dim);
+  border: 1px solid rgba(97,218,251,0.22);
+  padding: 6px 18px;
+  border-radius: 99px;
+  margin-bottom: 28px;
+}
+
+.react-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--text-1);
+  margin-bottom: 22px;
+}
+
+.react-accent {
+  color: var(--sky);
+  position: relative;
+  text-shadow: 0 0 40px rgba(97,218,251,0.45);
+  animation: reactSpin 20s linear infinite;
+  display: inline-block;
+}
+
+@keyframes reactSpin {
+  /* subtle glow pulse instead of rotation on the word */
+  0%, 100% { text-shadow: 0 0 30px rgba(97,218,251,0.45); }
+  50%       { text-shadow: 0 0 60px rgba(97,218,251,0.7); }
+}
+
+.react-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sky), transparent);
+  border-radius: 99px;
+}
+
+.react-hero-sub {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-2);
+  max-width: 600px;
+  margin: 0 auto 36px;
+}
+
+.react-hero-stats {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 16px 8px;
+}
+
+.r-stat { text-align: center; padding: 0 28px; }
+
+.r-stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--sky);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.r-stat-label {
+  font-size: 0.68rem;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.r-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+.react-section {
+  margin-bottom: 76px;
+  animation: rFadeUp 0.7s var(--ease) both;
+  padding-top: 64px;
+}
+
+.react-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 32px;
+}
+
+.react-section-num {
+  display: inline-block;
+  background: var(--sky-dim);
+  border: 1px solid rgba(97,218,251,0.18);
+  padding: 4px 14px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+}
+
+.react-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── TAGS ── */
+.react-pdf-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  white-space: nowrap;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.tag-green  { background: rgba(74,222,128,0.1);  color: var(--green);  border: 1px solid rgba(74,222,128,0.22);  }
+.tag-blue   { background: rgba(97,218,251,0.1);  color: var(--sky);    border: 1px solid rgba(97,218,251,0.22);  }
+.tag-purple { background: rgba(192,132,252,0.1); color: var(--purple); border: 1px solid rgba(192,132,252,0.22); }
+
+/* ============================================================
+   TOPICS
+   ============================================================ */
+.react-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.react-topic-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  cursor: default;
+  transition: all 0.22s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.react-topic-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sky), transparent);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.react-topic-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.react-topic-card:hover::before { opacity: 1; }
+
+.react-topic-icon  { font-size: 1.6rem; display: block; margin-bottom: 14px; line-height: 1; }
+.react-topic-name  { font-family: var(--font-display); font-size: 0.97rem; font-weight: 700; color: var(--text-1); margin-bottom: 8px; line-height: 1.35; }
+.react-topic-desc  { font-size: 0.82rem; color: var(--text-2); line-height: 1.7; font-family: var(--font-mono); }
+
+/* ============================================================
+   SNIPPET
+   ============================================================ */
+.react-snippet-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.react-snippet-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  flex-wrap: wrap;
+}
+
+.react-snippet-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-3);
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s var(--ease);
+}
+.react-snippet-tab:hover { color: var(--text-1); border-color: var(--border); }
+.react-snippet-tab.active { background: var(--sky-dim); color: var(--sky); border-color: rgba(97,218,251,0.3); }
+
+.react-copy-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.15s var(--ease);
+}
+.react-copy-btn:hover { border-color: rgba(97,218,251,0.35); color: var(--sky); }
+
+.react-snippet-code {
+  padding: 28px;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--text-1);
+  white-space: pre;
+  overflow-x: auto;
+}
+.react-snippet-code code { color: inherit; }
+
+/* ============================================================
+   PDF / RESOURCE CARDS
+   ============================================================ */
+.react-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.react-pdf-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.react-pdf-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sky), transparent);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.react-pdf-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+.react-pdf-card:hover::before { opacity: 1; }
+
+.react-pdf-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.react-pdf-body { flex: 1; min-width: 0; }
+.react-pdf-title { font-family: var(--font-display); font-size: 0.97rem; font-weight: 700; color: var(--text-1); margin-bottom: 6px; line-height: 1.4; }
+.react-pdf-pages { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-3); }
+.react-pdf-arrow { font-size: 1.1rem; color: var(--text-3); flex-shrink: 0; transition: color 0.2s, transform 0.2s var(--ease); margin-top: 2px; }
+.react-pdf-card:hover .react-pdf-arrow { color: var(--sky); transform: translate(2px, -2px); }
+
+/* ============================================================
+   VIDEOS
+   ============================================================ */
+.react-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.react-video-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.25s var(--ease);
+}
+.react-video-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.react-video-frame-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+.react-video-frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.react-video-meta  { padding: 18px 20px 22px; }
+.react-video-badges { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+
+.r-badge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--sky-dim);
+  color: var(--sky);
+  border: 1px solid rgba(97,218,251,0.22);
+}
+.r-badge-time { background: rgba(255,255,255,0.04); color: var(--text-3); border-color: var(--border); }
+
+.react-video-title { font-family: var(--font-display); font-size: 0.97rem; font-weight: 700; color: var(--text-1); margin-bottom: 8px; line-height: 1.35; }
+.react-video-desc  { font-size: 0.855rem; color: var(--text-2); line-height: 1.7; font-family: var(--font-mono); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.react-footer {
+  text-align: center;
+  padding: 48px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 72px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes rFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .react-page       { padding: 0 20px 72px; }
+  .react-card-grid,
+  .react-video-grid { grid-template-columns: 1fr; }
+  .react-topics-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .react-hero          { padding: 56px 0 48px; }
+  .react-hero-title    { font-size: 2rem; }
+  .react-hero-stats    { flex-direction: column; border-radius: var(--radius-md); padding: 20px 28px; gap: 12px; }
+  .r-stat-divider      { width: 48px; height: 1px; }
+  .react-topics-grid   { grid-template-columns: 1fr; }
+}
