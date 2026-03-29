@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./spring.css";
+import "./Spring.css";
 
 const resources = [
   {
