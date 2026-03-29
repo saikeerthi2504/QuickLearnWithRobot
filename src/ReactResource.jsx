@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./react.css";
+import "./React.css";
 
 const resources = [
   {
